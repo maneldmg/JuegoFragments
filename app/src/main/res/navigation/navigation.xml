@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/inicialFragment">
+
+    <fragment
+        android:id="@+id/inicialFragment"
+        android:name="com.maneldam.juegofragments.InicialFragment"
+        android:label="InicialFragment" >
+        <action
+            android:id="@+id/action_inicialFragment_to_firstFragment"
+            app:destination="@id/firstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="com.maneldam.juegofragments.FirstFragment"
+        android:label="FirstFragment" >
+        <action
+            android:id="@+id/action_firstFragment_to_secondFragment"
+            app:destination="@id/secondFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.maneldam.juegofragments.SecondFragment"
+        android:label="SecondFragment" >
+        <action
+            android:id="@+id/action_secondFragment_to_scoreFragment"
+            app:destination="@id/scoreFragment"
+            app:popUpTo="@id/firstFragment" />
+        <action
+            android:id="@+id/action_secondFragment_to_finalFragment"
+            app:destination="@id/finalFragment"
+            app:popUpTo="@id/inicialFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/scoreFragment"
+        android:name="com.maneldam.juegofragments.ScoreFragment"
+        android:label="fragment_score"
+        tools:layout="@layout/fragment_score" />
+    <fragment
+        android:id="@+id/finalFragment"
+        android:name="com.maneldam.juegofragments.FinalFragment"
+        android:label="fragment_final"
+        tools:layout="@layout/fragment_final" />
+</navigation>
